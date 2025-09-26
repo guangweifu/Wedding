@@ -223,7 +223,20 @@
     <script>
         document.querySelectorAll('.envelope-container').forEach(container => {
             container.addEventListener('click', () => {
-                container.classList.toggle('open');
+                const envelopeFront = container.querySelector('.envelope-front');
+                
+                if (container.classList.contains('open')) {
+                    // It's open, so we are closing it.
+                    container.classList.remove('open');
+                    envelopeFront.style.display = 'flex'; // Show it before flip-back starts
+                } else {
+                    // It's closed, so we are opening it.
+                    container.classList.add('open');
+                    // Hide the front halfway through the animation
+                    setTimeout(() => {
+                        envelopeFront.style.display = 'none';
+                    }, 400); // 400ms is half of the 0.8s animation
+                }
             });
         });
     </script>
