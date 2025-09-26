@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation | Einladung zur Hochzeit | 婚礼请柬</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #e8e5df; /* A warm, neutral background */
+        }
+        .font-script {
+            font-family: 'Pinyon Script', cursive;
+        }
+        .card {
+            background-color: #fcfaf7; /* A clean ivory */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        @media (min-width: 1024px) {
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            }
+        }
+        .card-inner-border {
+            border: 2px solid #c8bba8; /* A clean, solid inner border */
+        }
+        .text-main {
+            color: #5d5244; /* A softer, brownish-gray */
+        }
+        .text-accent {
+             color: #8c7a65;
+        }
+        /* Ensure consistent height for all cards */
+        .card-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .card-content {
+            flex-grow: 1;
+        }
+
+        /* Envelope styles */
+        .envelope-container {
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .envelope-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        .envelope-container.open .envelope-wrapper {
+            transform: rotateY(180deg);
+        }
+        .envelope-front, .card-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        .envelope-front {
+            background-color: #fdf5e6; /* Old Lace */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #dcdcdc;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-color: #fdf5e6;
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            z-index: 2;
+        }
+        .envelope-front-text {
+            font-family: 'Pinyon Script', cursive;
+            font-size: 2.5rem;
+            color: #8c7a65;
+            z-index: 1;
+        }
+        .card-container {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="flex items-start justify-center min-h-screen p-4 sm:p-6 md:p-8">
+
+    <main class="w-full max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- German Panel -->
+            <div class="envelope-container h-[750px]">
+                <div class="envelope-wrapper">
+                    <div class="envelope-front">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-front-text">Einladung</div>
+                    </div>
+                    <div class="card-container">
+                        <div class="card shadow-lg h-full">
+                            <div class="card-inner-border flex flex-col items-center text-center p-8 text-main h-full card-content">
+                                <p class="mt-4 text-base px-2">Wir laden herzlich ein zur Hochzeit von</p>
+                                <h1 class="font-script text-5xl my-3">Mareike Peters & Guangwei Fu</h1>
+                                <p class="text-lg tracking-wider">am</p>
+                                <p class="text-lg font-bold tracking-wider">Freitag, dem 17. Oktober 2025</p>
+                                <div class="w-24 h-px bg-[#c8bba8] my-6"></div>
+                                <div class="mb-6">
+                                    <h2 class="text-xl font-bold tracking-widest text-accent mb-2">ZEREMONIE</h2>
+                                    <p class="text-lg font-bold">17:00 Uhr</p>
+                                    <p class="text-lg font-bold mt-2">The Kreeger Museum</p>
+                                    <p class="text-base mt-1">2401 Foxhall Road NW, D.C.</p>
+                                    <div class="mt-4 text-base px-2">
+                                        <p>Im Anschluss an die Zeremonie laden wir Euch ein, das Museum und den Skulpturengarten zu genießen.</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="text-xl font-bold tracking-widest text-accent mb-2">EMPFANG & ABENDESSEN</h2>
+                                    <p class="text-lg font-bold">19:00 Uhr</p>
+                                    <p class="text-lg font-bold mt-2">Chez Billy Sud</p>
+                                    <p class="text-base mt-1">1039 31st Street NW</p>
+                                </div>
+                                <div class="w-24 h-px bg-[#c8bba8] my-6"></div>
+                                <div class="flex flex-col items-center text-center">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- English Panel -->
+            <div class="envelope-container h-[750px]">
+                <div class="envelope-wrapper">
+                    <div class="envelope-front">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-front-text">Invitation</div>
+                    </div>
+                    <div class="card-container">
+                        <div class="card shadow-lg h-full">
+                            <div class="card-inner-border flex flex-col items-center text-center p-8 text-main h-full card-content">
+                                <p class="mt-4 text-base px-2">You are invited to celebrate the marriage of</p>
+                                <h1 class="font-script text-5xl my-3">Mareike Peters & Guangwei Fu</h1>
+                                <p class="text-lg tracking-wider">on</p>
+                                <p class="text-lg font-bold tracking-wider">Friday, October 17th, 2025</p>
+                                <div class="w-24 h-px bg-[#c8bba8] my-6"></div>
+                                <div class="mb-6">
+                                    <h2 class="text-xl font-bold tracking-widest text-accent mb-2">CEREMONY</h2>
+                                    <p class="text-lg font-bold">5:00 p.m.</p>
+                                    <p class="text-lg font-bold mt-2">The Kreeger Museum</p>
+                                    <p class="text-base mt-1">2401 Foxhall Road NW, D.C.</p>
+                                    <div class="mt-4 text-base px-2">
+                                        <p>Following the ceremony, we invite you to enjoy the museum and the sculpture garden.</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="text-xl font-bold tracking-widest text-accent mb-2">DINNER RECEPTION</h2>
+                                    <p class="text-lg font-bold">7:00 p.m.</p>
+                                    <p class="text-lg font-bold mt-2">Chez Billy Sud</p>
+                                    <p class="text-base mt-1">1039 31st Street NW</p>
+                                </div>
+                                <div class="w-24 h-px bg-[#c8bba8] my-6"></div>
+                                <div class="flex flex-col items-center text-center">
+                                    <p class="mt-2 text-base">Your presence is the greatest gift.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chinese Panel -->
+            <div class="envelope-container h-[750px]">
+                <div class="envelope-wrapper">
+                    <div class="envelope-front">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-front-text">请柬</div>
+                    </div>
+                    <div class="card-container">
+                        <div class="card shadow-lg h-full">
+                            <div class="card-inner-border flex flex-col items-center text-center p-8 text-main h-full card-content">
+                                <p class="mt-4 text-base px-2">诚邀您参加婚礼</p>
+                                <h1 class="font-script text-5xl my-3">Mareike Peters & Guangwei Fu</h1>
+                                <p class="text-lg tracking-wider">于</p>
+                                <p class="text-lg font-bold tracking-wider">2025年10月17日, 星期五</p>
+                                <div class="w-24 h-px bg-[#c8bba8] my-6"></div>
+                                <div class="mb-6">
+                                    <h2 class="text-xl font-bold tracking-widest text-accent mb-2">婚礼仪式</h2>
+                                    <p class="text-lg font-bold">下午5:00</p>
+                                    <p class="text-lg font-bold mt-2">The Kreeger Museum</p>
+                                    <p class="text-base mt-1">2401 Foxhall Road NW, D.C.</p>
+                                    <div class="mt-4 text-base px-2">
+                                        <p>仪式结束后, 我们诚邀您参观博物馆。</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="text-xl font-bold tracking-widest text-accent mb-2">晚宴</h2>
+                                    <p class="text-lg font-bold">晚上7:00</p>
+                                    <p class="text-lg font-bold mt-2">Chez Billy Sud</p>
+                                    <p class="text-base mt-1">1039 31st Street NW</p>
+                                </div>
+                                <div class="w-24 h-px bg-[#c8bba8] my-6"></div>
+                                <div class="flex flex-col items-center text-center">
+                                    <p class="mt-2 text-base">您的光临是我们最好的礼物。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        document.querySelectorAll('.envelope-container').forEach(container => {
+            container.addEventListener('click', () => {
+                container.classList.toggle('open');
+            });
+        });
+    </script>
+
+</body>
+</html>
